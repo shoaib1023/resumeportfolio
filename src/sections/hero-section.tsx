@@ -114,12 +114,10 @@ export default function HeroSection() {
       </svg>
 
       <img
-        src="/assets/user-image.png"
-        alt="Profile Image"
-        className="size-56 rounded-full"
-        width={144}
-        height={144}
-      />
+  src="/assets/user-image.png"
+  alt="Profile Image"
+  className="w-56 h-56 rounded-full object-cover shadow-lg border-4 border-white"
+/>
 
       <h2 className="text-4xl md:text-6xl font-semibold mt-6">
         SHOAIB UR REHMAN
@@ -160,7 +158,7 @@ export default function HeroSection() {
         </a>
         <a
           href="https://github.com/shoaib1023"
-                    target="_blank"
+          target="_blank"
           className="inline-flex hover:-translate-y-0.5 transition"
         >
           <svg
