@@ -14,7 +14,7 @@ export default function App() {
             <LenisScroll />
             <HeroSection />
             <AboutSection />
-            <ProjectsSection />
+            {/* <ProjectsSection /> */}
             <ExperienceSection />
             <EducationSection />
             <SkillsSection />
