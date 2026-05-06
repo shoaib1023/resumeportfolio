@@ -5,27 +5,28 @@ import { lenisInstance } from "../components/lenis";
 export default function ProjectsSection() {
     const [index, setIndex] = useState(0);
 
-    const scrollRef = useRef<HTMLDivElement>(null);
+    const scrollRef = useRef<any>(null);
 
-useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
 
-    const stop = () => lenisInstance.current?.stop();
-    const start = () => lenisInstance.current?.start();
+        const stop = () => lenisInstance.current?.stop();
+        const start = () => lenisInstance.current?.start();
 
-    el.addEventListener("mouseenter", stop);
-    el.addEventListener("mouseleave", start);
-    el.addEventListener("touchstart", stop, { passive: true });
-    el.addEventListener("touchend", start);
+        el.addEventListener("mouseenter", stop);
+        el.addEventListener("mouseleave", start);
+        el.addEventListener("touchstart", stop, { passive: true });
+        el.addEventListener("touchend", start);
 
-    return () => {
-        el.removeEventListener("mouseenter", stop);
-        el.removeEventListener("mouseleave", start);
-        el.removeEventListener("touchstart", stop);
-        el.removeEventListener("touchend", start);
-    };
-}, []);
+        return () => {
+            el.removeEventListener("mouseenter", stop);
+            el.removeEventListener("mouseleave", start);
+            el.removeEventListener("touchstart", stop);
+            el.removeEventListener("touchend", start);
+        };
+    }, []);
+
     const projects = [
         {
             title: "Beiing Humans",
@@ -58,7 +59,6 @@ useEffect(() => {
         }
     ];
 
-    // Sync dot indicator with scroll position
     const handleScroll = () => {
         if (!scrollRef.current) return;
         const { scrollLeft, offsetWidth } = scrollRef.current;
@@ -66,17 +66,14 @@ useEffect(() => {
         setIndex(newIndex);
     };
 
-
     return (
         <Section title="Projects">
-
-            {/* ── Mobile: horizontal snap scroll ── */}
             <div className="sm:hidden">
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
                     className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-3 -mx-4 px-4"
-                    style={{ scrollbarWidth: "none" }} // hide scrollbar on Firefox
+                    style={{ scrollbarWidth: "none" }}
                 >
                     {projects.map((project) => (
                         <div
@@ -88,7 +85,6 @@ useEffect(() => {
                     ))}
                 </div>
 
-                {/* Dots */}
                 <div className="flex justify-center gap-1.5 mt-3">
                     {projects.map((_, i) => (
                         <button
@@ -99,14 +95,14 @@ useEffect(() => {
                                     behavior: "smooth",
                                 });
                             }}
-                            className={`w-2 h-2 rounded-full transition-colors ${i === index ? "bg-gray-800" : "bg-gray-300"
-                                }`}
+                            className={`w-2 h-2 rounded-full transition-colors ${
+                                i === index ? "bg-gray-800" : "bg-gray-300"
+                            }`}
                         />
                     ))}
                 </div>
             </div>
 
-            {/* ── Tablet: 2-col grid, no arrows needed ── */}
             <div className="hidden sm:grid lg:hidden grid-cols-2 gap-5">
                 {projects.map((project) => (
                     <div key={project.title} className="border rounded-xl shadow-sm overflow-hidden">
@@ -115,14 +111,13 @@ useEffect(() => {
                 ))}
             </div>
 
-            {/* ── Desktop: arrows + 2 visible cards ── */}
             <DesktopCarousel projects={projects} />
-
         </Section>
     );
 }
 
-function DesktopCarousel({ projects }) {
+// -------- Desktop Carousel --------
+function DesktopCarousel({ projects }: any) {
     const [index, setIndex] = useState(0);
     const visibleCount = 2;
     const maxIndex = projects.length - visibleCount;
@@ -134,22 +129,27 @@ function DesktopCarousel({ projects }) {
 
     return (
         <div className="hidden lg:flex items-center gap-4">
-            <button onClick={prev} className="p-2 border rounded shrink-0 hover:bg-gray-100 transition-colors">◀</button>
+            <button onClick={prev} className="p-2 border rounded shrink-0 hover:bg-gray-100 transition-colors">
+                ◀
+            </button>
 
             <div className="grid grid-cols-2 gap-6 w-full">
-                {visibleProjects.map((project) => (
+                {visibleProjects.map((project: any) => (
                     <div key={project.title} className="border rounded-xl shadow-sm overflow-hidden">
                         <ProjectCard project={project} />
                     </div>
                 ))}
             </div>
 
-            <button onClick={next} className="p-2 border rounded shrink-0 hover:bg-gray-100 transition-colors">▶</button>
+            <button onClick={next} className="p-2 border rounded shrink-0 hover:bg-gray-100 transition-colors">
+                ▶
+            </button>
         </div>
     );
 }
 
-function ProjectCard({ project }) {
+// -------- Project Card --------
+function ProjectCard({ project }: any) {
     return (
         <>
             <img
@@ -160,7 +160,7 @@ function ProjectCard({ project }) {
             <div className="p-4">
                 <h3 className="font-semibold">{project.title}</h3>
                 <ul className="list-disc pl-5 mt-3 text-sm text-gray-500 space-y-1">
-                    {project.description.map((d, i) => (
+                    {project.description.map((d: string, i: number) => (
                         <li key={i}>{d}</li>
                     ))}
                 </ul>
