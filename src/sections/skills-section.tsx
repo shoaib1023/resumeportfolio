@@ -1,19 +1,36 @@
 import Section from "../components/section";
 
 export default function SkillsSection() {
-    const skills = [
-        "React.js",
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript",
-        "Node.js",
-        "PostgreSQL",
-        "MySQL",
-        "Git",
-        "HTML",
-        "CSS",
-        "JavaScript",
-    ];
+   const skills = [
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "MySQL",
+    "Git",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Redux",
+    "Express.js",
+    "MongoDB",
+    "Three.js",
+    "Docker",
+    "Jenkins",
+    "Splunk",
+    "Postman",
+    "Swagger",
+    "GitHub",
+    "REST APIs",
+    "Microservices",
+    "Agile / Scrum",
+    "Performance Optimization",
+    "Role-Based Access Control",
+    "CI/CD Pipelines",
+    "SQL Server",
+];
 
     return (
         <Section title="Skills">

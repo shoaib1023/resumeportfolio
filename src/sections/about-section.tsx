@@ -5,10 +5,10 @@ export default function AboutSection() {
         <Section title="About">
             <div className="text-sm/6.5">
                 <p>
-                    I’m Shoaib Ur Rehman, a full-stack developer passionate about building end-to-end digital experiences that are fast, scalable and user-focused. With strong expertise in both front-end and back-end technologies, I enjoy transforming ideas into fully functional web applications that feel seamless and intuitive.
-                </p>
-                <p className="mt-5">
-                    Whether it’s crafting responsive interfaces or developing robust backend systems, I aim to deliver solutions that are both reliable and impactful.
+                    I’m Shoaib Ur Rehman,Full-stack developer with 4+ years of experience in Node.js, Express, React.js, and Redux, building scalable applications for high-traffic environments.
+                    Proven track record in performance optimization, improving load times by 25% and reducing API response times to 35% through system migrations and efficient architecture.
+                    Experienced in modernizing applications (Electrode to Next.js, Java to Node.js) and working within Agile Scrum teams.
+                    Skilled in CI/CD pipeline management using Jenkins and log monitoring with Splunk for production support and debugging.
                 </p>
             </div>
         </Section>

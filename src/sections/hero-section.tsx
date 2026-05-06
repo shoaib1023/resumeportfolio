@@ -114,9 +114,9 @@ export default function HeroSection() {
       </svg>
 
       <img
-  src="/assets/user-image.png"
+  src="/assets/user-image.jpeg"
   alt="Profile Image"
-  className="w-56 h-56 rounded-full object-cover shadow-lg border-4 border-white"
+  className="w-76 h-76 rounded-full object-cover shadow-lg border-4 border-white"
 />
 
       <h2 className="text-4xl md:text-6xl font-semibold mt-6">

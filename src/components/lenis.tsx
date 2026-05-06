@@ -1,7 +1,10 @@
+// In LenisScroll.tsx — export the lenis instance
 'use client';
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+
+export const lenisInstance = { current: null as Lenis | null };
 
 export default function LenisScroll() {
     useEffect(() => {
@@ -10,6 +13,8 @@ export default function LenisScroll() {
             smoothWheel: true,
             anchors: true,
         });
+
+        lenisInstance.current = lenis;
 
         const raf = (time: number) => {
             lenis.raf(time);
@@ -20,6 +25,7 @@ export default function LenisScroll() {
 
         return () => {
             lenis.destroy();
+            lenisInstance.current = null;
         };
     }, []);
 

@@ -10,7 +10,7 @@ export default function ExperienceSection() {
             start: "Sept 2021",
             end: "Present",
             description: [
-                "Designed and developed scalable, high-performance user interfaces and micro-frontends using React.js, Next.js, Redux, TypeScript, and modern CSS frameworks, improving overall user experience and maintainability","Collaborated closely with product managers and cross-functional teams to translate business requirements into intuitive, user-centric UI solutions ","Actively participated in Agile/Scrum ceremonies, including daily stand-ups and peer code reviews, ensuring code quality, consistency, and continuous delivery through Git, GitHub, and CI/CD pipelines.",
+                "Developed and maintained scalable microservices using Node.js and Express, serving thousands of daily users, Built responsive, reusable UI components using React.js and Redux, improving page performance and reducing load times by 25%.","Collaborated within Agile Scrum teams, actively participating in sprint planning, reviews, and retrospectives.","Migrated the entire website from Electrode (Walmart’s framework) to the latest Next.js architecture.","Migrated backend services from a Java-based layer to Node.js, reducing API response time to 35%.","Worked with Jenkins to run CI/CD pipelines and manage application deployments.","Utilized Splunk to write queries and analyze logs for effective debugging and monitoring",
             ],
         },
         // {
